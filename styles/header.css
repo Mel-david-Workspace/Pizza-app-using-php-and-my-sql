@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background-color: #dbdbdb;
+}
+
+#navigation{
+    width: 100%;
+    line-height: 80px;
+    background-color: white;
+}
+
+.container{
+    justify-content: space-around;
+    display: flex;
+}
+
+.pizzaButton{
+    align-content: center;
+}
+.pizzaButton .titleA{
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: darkgoldenrod;
+}
+
+.titleh2{
+    color: darkgoldenrod;
+}
+
+.titleA{
+    color: white;
+}
+
+
+
+.section{
+    text-align: center;
+}
+
+.center{
+    color: grey;
+}
+.h4home{
+    text-align: center;
+    padding-top: 20px;
+    font-weight: lighter;
+    color: grey;
+    font-size: 25px;
+}
+
+.homecol1{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
