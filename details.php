@@ -25,9 +25,18 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <?php include('templates/header.php') ?>
+    
+    <head>
+        <style>
+            #center{
+                display: block;
+            }
+        </style>
+    </head>
 
-    <div class="container center">
+    <?php include('templates/header.php'); ?>
+
+    <div class="container center" id="center">
         <?php if ($pizzas): ?>
             <h4><?php echo htmlspecialchars($pizzas['title']); ?></h4>
             <p>Created by:<?php echo htmlspecialchars($pizzas['email']); ?></p>
@@ -39,5 +48,5 @@
         <?php endif ?>
     </div>
 
-    <?php include('templates/footer.php') ?>
-</html>
+    <?php include('templates/footer.php'); ?>
+</html>~
