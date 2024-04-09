@@ -32,6 +32,10 @@
                 width: 100%;
                 margin-right: -0.75rem;
             }
+
+            #h6{
+                font-size: 17px; 
+            }
         </style>
     </head>
 
@@ -45,7 +49,7 @@
                 <div class="col s6 md3">
                     <div class="card z-depth-0">
                         <div class="card-content center" id="card-content">
-                            <h6><?php echo htmlspecialchars($pizzas['title']); ?></h6>
+                            <h6 id="h6"><?php echo htmlspecialchars($pizzas['title']); ?></h6>
                             <ul>
                                 <?php foreach (explode(',', $pizzas['ingredient']) as $ing) : ?>
                                     <li><?php echo htmlspecialchars($ing) ?></li>
