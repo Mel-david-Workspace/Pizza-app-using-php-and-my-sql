@@ -1,12 +1,5 @@
 <?php
-    //connect to database
-    $conn = mysqli_connect('localhost', 'MelDavid', 'test1234', 'meldavidpizza');
-
-    //check connection
-    if (!$conn) {
-        # code...
-        echo 'Connection error: ' . mysqli_connect_error();
-    }
+    include('config/db-connect.php');
 
     //write query for all pizza
     $sql = 'SELECT title, ingredient, id FROM `pizza` ORDER BY created_At';
@@ -23,6 +16,8 @@
     //cclose connection
     mysqli_close($conn);
 
+    // explode(',', $pizza[0]['ingredient'])
+
 ?>
 
 <!DOCTYPE html>
@@ -30,24 +25,34 @@
 
     <?php include('templates/header.php') ?>
 
-    <h4 class="h4home">Pizzas!</h4>
-    <div class="homecontainer">
-        <div class="homerow">
-            <?php foreach($pizza as $pizzas){?>
+    <h4 class="center grey-text">Pizzas!</h4>
+    <div class="container">
+        <div class="row">
+            <?php foreach($pizza as $pizzas):?>
 
-                <div class="homecol">
-                    <div class="homecol1">
-                        <div class="homecol2">
+                <div class="col s6 md3">
+                    <div class="card z-depth-0">
+                        <div class="card-content center">
                             <h6><?php echo htmlspecialchars($pizzas['title']); ?></h6>
-                            <div><?php echo htmlspecialchars($pizzas['ingredient']); ?></div>
+                            <ul>
+                                <?php foreach (explode(',', $pizzas['ingredient']) as $ing) : ?>
+                                    <li><?php echo htmlspecialchars($ing) ?></li>
+                                <?php endforeach ?>
+                            </ul>
                         </div>
-                        <div class="card-action">
-                            <a href="" class="brand-text">More info</a>
+                        <div class="card-action right-align">
+                            <a class="brand-text" href="details.php?id=<?php echo $pizzas['id'] ?>">More info</a>
                         </div>
                     </div>
                 </div>
 
-            <?php } ?>
+            <?php endforeach ?>
+
+            <?php if(count($pizza) >= 2) : ?>
+                <!-- <p>There are 3 more pizzas</p> -->
+            <?php  else :?>
+                <!-- <p> There are less than 3 pizzas</p> -->
+            <?php endif?> 
         </div>
     </div>
 
