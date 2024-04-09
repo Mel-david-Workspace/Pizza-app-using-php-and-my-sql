@@ -23,6 +23,18 @@
 <!DOCTYPE html>
 <html>
 
+    <head>
+        <style>
+            #card-content{
+                height: 25vh;
+            }
+            .container .row {
+                width: 100%;
+                margin-right: -0.75rem;
+            }
+        </style>
+    </head>
+
     <?php include('templates/header.php') ?>
 
     <h4 class="center grey-text">Pizzas!</h4>
@@ -32,7 +44,7 @@
 
                 <div class="col s6 md3">
                     <div class="card z-depth-0">
-                        <div class="card-content center">
+                        <div class="card-content center" id="card-content">
                             <h6><?php echo htmlspecialchars($pizzas['title']); ?></h6>
                             <ul>
                                 <?php foreach (explode(',', $pizzas['ingredient']) as $ing) : ?>
